@@ -1,1 +1,1 @@
-print("vanda")
+print("rui")
