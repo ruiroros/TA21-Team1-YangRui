@@ -10,3 +10,4 @@ with profitloss_fp.open(mode='r', encoding='UTF-8') as file:
     profitloss_read = file.read()
 
 print(profitloss_read)
+
