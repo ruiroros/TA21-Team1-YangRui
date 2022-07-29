@@ -13,22 +13,21 @@ def cash_on_hand_function():
         for line in cash_read:
             coh = line[1]
             cash_on_hand.append(coh)
-
+        
         x = 1
-        diff = []
-        while x < 10:
+        # diff = []
+        while x < len(cash_on_hand):
             difference = float(cash_on_hand[x]) - float(cash_on_hand[x-1])
-            print(difference)
-            diff.append(difference)
-            diff.sort()
+            # print(cash_on_hand[x-1])
+            # print(cash_on_hand[x])
+            #print(difference)
             x += 1
             if difference < 0:
                 message = "test only"
             else:
                 message = "ok"
 
-        #wht tf is the return not working tf
-        return message
+            print(message)
 
 cash_on_hand_function()
 
@@ -43,3 +42,5 @@ cash_on_hand_function()
         #for line in cash_read:
             #cash_on_hand = line[1]
             #empty_list.append(cash_on_hand)
+
+
