@@ -10,14 +10,9 @@ with cash_fp.open(mode='r', encoding='UTF-8', newline="") as file:
     next(cash_read)
 
     for line in cash_read:
-        print(line)
+        # print(line)
+        for days, cash in enumerate(line):
+            print(cash)
 
-# vanda : append to empty list?? enumerate and use re.search(pattern='[0-9][0-9][0-9][0-9][0-9][0-9][0-9]', string = index)/findall?
-
-# rui starts from line 15 TRY 
-
-cash_string = str(cash_read)
-print(cash_string)
-# print(type(cash_string))
-print(cash_string[2])
+#why tf got the days number!!! how to get rid pls
 
