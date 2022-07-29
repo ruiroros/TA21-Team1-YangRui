@@ -17,3 +17,5 @@ with cash_fp.open(mode='r', encoding='UTF-8', newline="") as file:
         cash_emptylist.append(sublist[1])
     
     print(cash_emptylist)
+
+
