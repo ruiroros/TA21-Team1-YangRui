@@ -12,13 +12,13 @@ with cash_fp.open(mode='r', encoding='UTF-8', newline="") as file:
     for line in cash_read:
 <<<<<<< HEAD
         cash_on_hand = float(line[1])
-        print((cash_on_hand)- float(enumerate(line)))
+        print((cash_on_hand)- float((line)))
         # for days, cash in enumerate(line):
 =======
         cash_on_hand = line[1]
         print(cash_on_hand)
         # for days, ca`sh in enumerate(line):
->>>>>>> 9b5e0f71947faf5aa5b7b7b25e50454b6f1726d2
+>>>>>>> 9b
         #     print(cash)
 
 #why tf got the days number!!! how to get rid pls
