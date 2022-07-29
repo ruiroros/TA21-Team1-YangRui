@@ -10,9 +10,9 @@ with cash_fp.open(mode='r', encoding='UTF-8', newline="") as file:
     next(cash_read)
 
     for line in cash_read:
-        # print(line)
-        for days, cash in enumerate(line):
-            print(cash)
+        print((line[1]))
+        # for days, cash in enumerate(line):
+        #     print(cash)
 
 #why tf got the days number!!! how to get rid pls
 
