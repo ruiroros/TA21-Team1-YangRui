@@ -9,11 +9,11 @@ with profitloss_fp.open(mode='r', encoding='UTF-8', newline="") as file:
 
     for line in profitloss_read:
         profitloss = line[4]
-        print(type(profitloss))
+        print((profitloss))
 
-        for line in profitloss:
-            number = line[2]
-            print(number)
+        # for line in profitloss:
+        #     number = line[2]
+        #     print(number)
 
 
 ####

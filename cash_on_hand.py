@@ -1,26 +1,45 @@
 from pathlib import Path
 import csv
 
-# cwd now is np one drive/"IGP PFB"/"project_group"/"cash_on_hand.py"
-cash_fp = Path.cwd()/"csv_reports"/"cash-on-hand-usd.csv"
-# print(cash_fp)
+coh_fp = Path.cwd()/"csv_reports"/"cash-on-hand-usd.csv" 
 
-with cash_fp.open(mode='r', encoding='UTF-8', newline="") as file:
-    cash_read = csv.reader(file)
-    next(cash_read)
+def cash_on_hand_function():
+    cash_on_hand = []
 
-empty_list = []
-# def diff_in_cash_values(final_values):
-for line in cash_read:
-    cash_on_hand = int(line[1])
-    empty_list.append(cash_on_hand)
-    print(cash_on_hand)
-        # for days, ca`sh in enumerate(line):
-        #     print(cash)
-        # maybe use def function with return?
+    with coh_fp.open(mode='r', encoding='UTF-8', newline="") as file:
+        cash_read = csv.reader(file)
+        next(cash_read)
+        
+        for line in cash_read:
+            coh = line[1]
+            cash_on_hand.append(coh)
 
-#why tf got the days number!!! how to get rid pls
-    #empty_list = []
-    #for line in cash_read:
-        #cash_on_hand = line[1]
-        #empty_list.append(cash_on_hand)
+        x = 1
+        diff = []
+        while x < 10:
+            difference = float(cash_on_hand[x]) - float(cash_on_hand[x-1])
+            print(difference)
+            diff.append(difference)
+            diff.sort()
+            x += 1
+            if difference < 0:
+                message = "test only"
+            else:
+                message = "ok"
+
+        #wht tf is the return not working tf
+        return message
+
+cash_on_hand_function()
+
+
+
+            # for days, ca`sh in enumerate(line):
+            #     print(cash)
+            # maybe use def function with return?
+
+    #why tf got the days number!!! how to get rid pls
+        #empty_list = []
+        #for line in cash_read:
+            #cash_on_hand = line[1]
+            #empty_list.append(cash_on_hand)
