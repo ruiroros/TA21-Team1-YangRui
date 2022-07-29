@@ -12,6 +12,7 @@ with cash_fp.open(mode='r', encoding='UTF-8', newline="") as file:
     for line in cash_read:
         cash_on_hand = line[1].split()
         print(type(cash_on_hand))
+        print(cash_on_hand)
         # for days, ca`sh in enumerate(line):
         #     print(cash)
 
