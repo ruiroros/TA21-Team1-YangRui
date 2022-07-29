@@ -11,6 +11,11 @@ with profitloss_fp.open(mode='r', encoding='UTF-8', newline="") as file:
         profitloss = line[4]
         print(type(profitloss))
 
+        for line in profitloss:
+            number = line[2]
+            print(number)
+
+
 ####
 # with cash_fp.open(mode='r', encoding='UTF-8', newline="") as file:
 #     cash_read = csv.reader(file)
