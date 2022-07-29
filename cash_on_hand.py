@@ -10,12 +10,11 @@ with cash_fp.open(mode='r', encoding='UTF-8', newline="") as file:
     next(cash_read)
 
 empty_list = []
-def diff_in_cash_values(final_value):
+def diff_in_cash_values(final_values):
     for line in cash_read:
         cash_on_hand = int(line[1])
         empty_list.append(cash_on_hand)
-    final_value = empty_list[0]-empty_list[1]
-    print(final_value)
+        print(empty_list)
         # for days, ca`sh in enumerate(line):
         #     print(cash)
         # maybe use def function with return?
