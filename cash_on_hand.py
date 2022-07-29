@@ -9,12 +9,14 @@ with cash_fp.open(mode='r', encoding='UTF-8', newline="") as file:
     cash_read = csv.reader(file)
     next(cash_read)
 
+def diff_in_cash_values(final_value):
     for line in cash_read:
         cash_on_hand = int(line[1])
-        print(type(cash_on_hand))
         print(cash_on_hand)
+        final_value = cash_on_hand
         # for days, ca`sh in enumerate(line):
         #     print(cash)
+        # maybe use def function with return?
 
 #why tf got the days number!!! how to get rid pls
     #empty_list = []
