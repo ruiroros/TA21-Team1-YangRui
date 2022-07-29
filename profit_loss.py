@@ -8,8 +8,7 @@ with profitloss_fp.open(mode='r', encoding='UTF-8') as file:
     next(profitloss_read)
 
     for line in profitloss_read:
-        profitloss = line[]
-        print()
+        profitloss = line[4]
+        print(profitloss)
 
-print(profitloss_read)
 
