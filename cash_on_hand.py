@@ -10,3 +10,4 @@ with cash_fp.open(mode='r', encoding='UTF-8') as file:
 
 print(cash_read)
 
+# append to empty list?? enumerate and use re.search(pattern='[0-9][0-9][0-9][0-9][0-9][0-9][0-9]', string = index)/findall?
