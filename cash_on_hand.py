@@ -24,9 +24,10 @@ def cash_on_hand_function():
 
             x += 1
             if difference <= 0:
+                #WRONG!!! NEED CONVERT DIFFERENCE FROM USD TO SGD BUT HOW 
                 message = f"[CASH DEFICIT] DAY:{days[x-1]}, AMOUNT: SGD{abs(difference)} "
             else: 
-                #i think this is wrong 
+                #should be ok? chck w teacher 
                 message = f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY "
                 
             print(message)
