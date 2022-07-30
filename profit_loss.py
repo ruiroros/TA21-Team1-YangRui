@@ -19,7 +19,8 @@ def profit_loss_function():
             days.append(day)
 
         x = 1
-        for difference in range(profit_loss):
+        # i think the error is in this line but ???
+        for difference in profit_loss:
             difference = float(profit_loss[x]) - float(profit_loss[x-1])
 
             x += 1 
