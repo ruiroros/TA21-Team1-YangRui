@@ -18,18 +18,20 @@ def cash_on_hand_function():
             day = line[0]
             days.append(day)
         
-        x = 1
-        for difference in cash_on_hand:
-            difference = float(cash_on_hand[x]) - float(cash_on_hand[x-1])
+        def loop():
+            x = 1
+            while x < len(cash_on_hand):
+                difference = float(cash_on_hand[x]) - float(cash_on_hand[x-1])
 
-            x += 1
-            if difference <= 0:
-                #WRONG!!! NEED CONVERT DIFFERENCE FROM USD TO SGD BUT HOW 
-                message = f"[CASH DEFICIT] DAY:{days[x-1]}, AMOUNT: SGD{abs(difference)} "
-            else: 
-                #should be ok? chck w teacher 
-                message = f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY "
-                
-            print(message)
+                x += 1
+                if difference <= 0:
+                    #WRONG!!! NEED CONVERT DIFFERENCE FROM USD TO SGD BUT HOW 
+                    message = f"[CASH DEFICIT] DAY:{days[x-1]}, AMOUNT: SGD{abs(difference)} "
+                else: 
+                    #should be ok? chck w teacher 
+                    message = f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY "
+                    
+                print(message)
+        loop()
 
 cash_on_hand_function()
