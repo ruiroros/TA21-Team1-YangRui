@@ -23,11 +23,12 @@ def cash_on_hand_function():
             difference = float(cash_on_hand[x]) - float(cash_on_hand[x-1])
 
             x += 1
-            if difference < 0:
+            if difference <= 0:
                 message = f"[CASH DEFICIT] DAY:{days[x-1]}, AMOUNT: #need convert?? "
             else: 
                 #i think this is wrong 
                 message = f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY "
+                
             print(message)
 
 cash_on_hand_function()

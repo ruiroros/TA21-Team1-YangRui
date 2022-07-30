@@ -3,14 +3,38 @@ import csv
 
 profitloss_fp = Path.cwd()/"csv_reports"/"profit-and-loss-usd.csv"
 
-with profitloss_fp.open(mode='r', encoding='UTF-8', newline="") as file:
-    profitloss_read = csv.reader(file)
-    next(profitloss_read)
+def profit_loss_function():
+    profit_loss = []
+    days = []
 
-    for line in profitloss_read:
-        profitloss = line[4]
-        print((profitloss))
+    with profitloss_fp.open(mode='r', encoding='UTF-8', newline="") as file:
+        profitloss_read = csv.reader(file)
+        next(profitloss_read)
 
+        for line in profitloss_read:
+            netprofit = line[4]
+            profit_loss.append(netprofit)
+
+            day = line[0]
+            days.append(day)
+
+        x = 1
+        for difference in profit_loss:
+            difference = float(profit_loss[x]) - float(profit_loss[x-1])
+
+            x += 1 
+            if difference <= 0:
+                message = "deficit"
+
+            else:
+                message = "na"
+
+            print(message)
+
+profit_loss_function()
+
+
+        # dont delete first might need
         # for line in profitloss:
         #     number = line[2]
         #     print(number)
