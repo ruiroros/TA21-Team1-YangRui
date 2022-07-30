@@ -24,6 +24,7 @@ def profit_loss_function():
 
             x += 1 
             if difference <= 0:
+                #NEED CONVERT DIFF TO SGD 
                 message = f"[PROFIT DEFICIT] DAY: {days[x-1]}, AMOUNT: SGD{abs(difference)}"
 
             else:
