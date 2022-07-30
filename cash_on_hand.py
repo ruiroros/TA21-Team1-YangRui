@@ -24,7 +24,7 @@ def cash_on_hand_function():
 
             x += 1
             if difference <= 0:
-                message = f"[CASH DEFICIT] DAY:{days[x-1]}, AMOUNT: #need convert?? "
+                message = f"[CASH DEFICIT] DAY:{days[x-1]}, AMOUNT: SGD{abs(difference)} "
             else: 
                 #i think this is wrong 
                 message = f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY "
