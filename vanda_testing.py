@@ -22,3 +22,4 @@ def overheads_function():
     print(category_list)
     print(overheads_list)
 
+print(overheads_function())
