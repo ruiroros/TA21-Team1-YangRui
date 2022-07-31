@@ -1,13 +1,25 @@
 import csv
 from pathlib import Path
-fp = Path.cwd()
-overheads_fp = fp/"csv_reports"/"overheads-45.csv"
 
-# print(fp)
-# print(overheads_fp)
+overheads_fp = Path.cwd()/"csv_reports"/"overheads-day-45.csv"
 
-with overheads_fp.open(mode='r', encoding='UTF-8') as file:
-    overheads_read = file.read()
+def overheads_function():
+    category = []
+    overheads = []
 
-# print(overheads_read)
+    with overheads_fp.open(mode='r', encoding='UTF-8', newline='') as file:
+        overheads_read = csv.reader(file)
+        next(overheads_read)
+        print(overheads_read)
 
+        for line in overheads_read:
+            cat = line[0]
+            category.append(cat)
+
+            ovheads = line[1]
+            overheads.append(ovheads)
+
+
+
+
+overheads_function()
