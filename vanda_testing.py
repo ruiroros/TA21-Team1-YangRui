@@ -14,12 +14,10 @@ def overheads_function():
         category_list = []
         overheads_list = []
         for line in overheads_read:
-            category = line[0]
-            overheads = line[1]
-            category_list.append(category)
-            overheads_list.append(overheads)
-            print(category_list)
-            print(overheads_list)
+            category = float(line[0])
+            overheads = float(line[1])
+            print(category)
+            print(overheads)
             # print(max(overheads_list))
 
     # *lists are iterable
