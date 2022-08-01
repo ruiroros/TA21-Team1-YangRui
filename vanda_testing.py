@@ -4,7 +4,7 @@ from unicodedata import category
 
 fp = Path.cwd()
 print(fp)
-overheads_fp = fp/"csv_reports"/"overheads-day-45"
+overheads_fp = fp/"csv_reports"/"overheads-day-45.csv"
 
 def overheads_function():
     category_list = []
@@ -19,7 +19,9 @@ def overheads_function():
             overheads = line[1]
             category_list.append(category)
             overheads_list.append(overheads)
-    print(category_list)
-    print(overheads_list)
+    print(type(category_list))
+    print(type(overheads_list))
+    # *lists are iterable
+    # use max() function?
 
 print(overheads_function())
