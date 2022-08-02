@@ -3,7 +3,7 @@ import csv
 
 coh_fp = Path.cwd()/"csv_reports"/"cash-on-hand-usd.csv" 
 
-def cash_on_hand_function():
+def coh():
     cash_on_hand = []
     days = []
 
@@ -24,7 +24,7 @@ def cash_on_hand_function():
             x += 1
             if difference <= 0:
                     #WRONG!!! NEED CONVERT DIFFERENCE FROM USD TO SGD BUT HOW 
-                message = f"[CASH DEFICIT] DAY:{days[x-1]}, AMOUNT: SGD{abs(difference)} "
+                message = f"[CASH DEFICIT] DAY: {days[x-1]}, AMOUNT: SGD{abs(difference)} "
 
             else:
                 continue 
@@ -34,4 +34,4 @@ def cash_on_hand_function():
             message = f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY "
             return message
 
-print(cash_on_hand_function())
+print(coh())
