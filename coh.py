@@ -23,7 +23,6 @@ def coh_function():
             difference = float(cash_on_hand[x]) - float(cash_on_hand[x-1])
             x += 1
             if difference <= 0:
-                    #WRONG!!! NEED CONVERT DIFFERENCE FROM USD TO SGD BUT HOW 
                 message = f"[CASH DEFICIT] DAY: {days[x-1]}, AMOUNT: SGD{abs(difference)} "
 
             else:
