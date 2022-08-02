@@ -19,18 +19,29 @@ def profitloss_function():
             days.append(day)
 
         x = 1
-        while x < len(profit_loss):
-            difference = float(profit_loss[x]) - float(profit_loss[x-1])
-            x += 1 
-            if difference <= 0:
-                message = f"[PROFIT DEFICIT] DAY: {days[x-1]}, AMOUNT: SGD{abs(difference)}"
 
-            else: 
-                continue
-            return message
+        try:
+            while x < len(profit_loss):
+                difference = float(profit_loss[x]) - float(profit_loss[x-1])
+                x += 1 
+                if difference <= 0:
+                    message = f"[PROFIT DEFICIT] DAY: {days[x-1]}, AMOUNT: SGD{abs(difference)}"
 
-        if difference > 0:
-             message = "[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
-             return message
+                else: 
+                    continue
+                return message
 
+            if difference > 0:
+                message = "[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
+                return message
+
+        except ValueError:
+            print("Please enter an appropriate value according to the argument type.")
+
+        except TypeError:
+            print("Please apply an appropriate operation or function according to the object type.")
+
+        finally:
+            print("End of function.")
+            
 print(profitloss_function())
