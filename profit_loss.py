@@ -3,7 +3,7 @@ import csv
 
 profitloss_fp = Path.cwd()/"csv_reports"/"profit-and-loss-usd.csv"
 
-def profit_loss_function():
+def profitloss_function():
     profit_loss = []
     days = []
 
@@ -34,4 +34,4 @@ def profit_loss_function():
              message = "[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
              return message
 
-print(profit_loss_function())
+print(profitloss_function())

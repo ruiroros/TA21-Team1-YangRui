@@ -3,7 +3,7 @@ import csv
 
 coh_fp = Path.cwd()/"csv_reports"/"cash-on-hand-usd.csv" 
 
-def coh():
+def coh_function():
     cash_on_hand = []
     days = []
 
@@ -34,4 +34,4 @@ def coh():
             message = f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY "
             return message
 
-print(coh())
+print(coh_function())

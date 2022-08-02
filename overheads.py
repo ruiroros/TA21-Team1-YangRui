@@ -4,7 +4,7 @@ import csv
 data = []
 overheads = {}
 
-def overheads_function():
+def overhead_function():
 
     overheads_fp = Path.cwd()/"csv_reports"/"overheads-day-45.csv"
     with overheads_fp.open(mode='r', encoding='UTF-8', newline="") as file:
@@ -21,6 +21,6 @@ def overheads_function():
         highestdata = max(data)
         highestcat = overheads[highestdata]
         msg = f"[HIGHEST OVERHEADS] {highestcat}: SGD{highestdata}"
-        print(msg)
+        return(msg)
 
-overheads_function()
+print(overhead_function())
