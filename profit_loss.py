@@ -41,7 +41,5 @@ def profitloss_function():
         except TypeError:
             print("Please apply an appropriate operation or function according to the object type.")
 
-        finally:
-            print("End of function.")
-            
+
 print(profitloss_function())
