@@ -28,7 +28,7 @@ def profit_loss_function():
                     message = f"[PROFIT DEFICIT] DAY: {days[x-1]}, AMOUNT: SGD{abs(difference)}"
 
                 else:
-                    # NEED TO REMOVE THIS LINE? BECAUSE BRIEF DH
+                    # NEED TO REMOVE THIS LINE? BECAUSE BRIEF DH REMOVE THIS LINE
                     message = "[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
 
                 print(message)
