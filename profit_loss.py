@@ -18,37 +18,20 @@ def profit_loss_function():
             day = line[0]
             days.append(day)
 
-        def loop():
-            x = 1
-            while x < len(profit_loss):
-                difference = float(profit_loss[x]) - float(profit_loss[x-1])
-                x += 1 
-                if difference <= 0:
-                    #NEED CONVERT DIFF TO SGD !!!
-                    message = f"[PROFIT DEFICIT] DAY: {days[x-1]}, AMOUNT: SGD{abs(difference)}"
+        x = 1
+        while x < len(profit_loss):
+            difference = float(profit_loss[x]) - float(profit_loss[x-1])
+            x += 1 
+            if difference <= 0:
+                #NEED CONVERT DIFF TO SGD !!!
+                message = f"[PROFIT DEFICIT] DAY: {days[x-1]}, AMOUNT: SGD{abs(difference)}"
 
-                else:
-                    # NEED TO REMOVE THIS LINE? BECAUSE BRIEF DH REMOVE THIS LINE
-                    message = "[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
+            else: 
+                continue
+            return message
 
-                print(message)
-        loop()
+        if difference > 0:
+             message = "[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
+             return message
 
-profit_loss_function()
-
-
-        # dont delete first might need
-        # for line in profitloss:
-        #     number = line[2]
-        #     print(number)
-
-
-####
-# with cash_fp.open(mode='r', encoding='UTF-8', newline="") as file:
-#     cash_read = csv.reader(file)
-#     next(cash_read)
-
-#     for line in cash_read:
-#         cash_on_hand = line[1]
-#         print(type(cash_on_hand))
-
+print(profit_loss_function())
