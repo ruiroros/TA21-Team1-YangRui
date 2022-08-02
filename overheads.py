@@ -1,28 +1,26 @@
-import csv
 from pathlib import Path
+import csv
 
-overheads_fp = Path.cwd()/"csv_reports"/"overheads-day-45.csv"
+data = []
+overheads = {}
 
 def overheads_function():
-    category = []
-    overheads = []
 
-    with overheads_fp.open(mode='r', encoding='UTF-8', newline='') as file:
-        overheads_read = csv.reader(file)
-        next(overheads_read)
-        
-        for line in overheads_read:
-            cat = line[0]
-            category.append(cat)
+    overheads_fp = Path.cwd()/"csv_reports"/"overheads-day-45.csv"
+    with overheads_fp.open(mode='r', encoding='UTF-8', newline="") as file:
+        overheads_reader = csv.reader(file)
+        next(overheads_reader)
 
-            ovheads = float(line[1])
-            overheads.append(ovheads)
+        for line in overheads_reader: 
+            value = float(line[1])
+            data.append(value)
 
-        highestcat = max(category)
-        highestoverheads = overheads[highestcat]
+            x = line[0]
+            overheads[value] = x
 
-        message = '[HIGHEST OVERHEADS] {highestoverheads.upper}: SGD{highestcat}'
-        print(message)
+        highestdata = max(data)
+        highestcat = overheads[highestdata]
+        msg = f"[HIGHEST OVERHEADS] {highestcat}: SGD{highestdata}"
+        print(msg)
 
 overheads_function()
-
