@@ -5,7 +5,6 @@ data = []
 overheads = {}
 
 def overhead_function():
-
     overheads_fp = Path.cwd()/"csv_reports"/"overheads-day-45.csv"
     summaryfp = Path.cwd()/'summary_report.txt'
 
@@ -28,7 +27,7 @@ def overhead_function():
         with summaryfp.open(mode='a', encoding='UTF-8', newline= '') as file: 
             file.writelines(f"\n{msg}")
 
-        return(msg)
+        returnmsg
 
 
 print(overhead_function())

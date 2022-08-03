@@ -25,15 +25,15 @@ def profitloss_function():
                 difference = float(profit_loss[x]) - float(profit_loss[x-1])
                 x += 1 
                 if difference <= 0:
-                    message = f"[PROFIT DEFICIT] DAY: {days[x-1]}, AMOUNT: SGD{abs(difference)}"
+                    msg = f"[PROFIT DEFICIT] DAY: {days[x-1]}, AMOUNT: SGD{abs(difference)}"
 
                 else: 
                     continue
-                return message
+                return msg
 
             if difference > 0:
-                message = "[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
-                return message
+                msg = "[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
+                return msg
 
         except ValueError:
             print("Please enter an appropriate value according to the argument type.")
