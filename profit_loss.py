@@ -2,10 +2,10 @@ from pathlib import Path
 import csv 
 
 profitloss_fp = Path.cwd()/"csv_reports"/"profit-and-loss-usd.csv"
+profit_loss = []
+days = []
 
 def profitloss_function():
-    profit_loss = []
-    days = []
 
     with profitloss_fp.open(mode='r', encoding='UTF-8', newline="") as file:
         profitloss_read = csv.reader(file)

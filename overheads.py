@@ -7,6 +7,8 @@ overheads = {}
 def overhead_function():
 
     overheads_fp = Path.cwd()/"csv_reports"/"overheads-day-45.csv"
+    summaryfp = Path.cwd()/'summary_report.txt'
+
     with overheads_fp.open(mode='r', encoding='UTF-8', newline="") as file:
         overheads_reader = csv.reader(file)
         next(overheads_reader)
@@ -17,13 +19,13 @@ def overhead_function():
 
             x = line[0]
             overheads[value] = x
-
+            
         highestdata = max(data)
         highestcat = overheads[highestdata]
         msg = f"[HIGHEST OVERHEADS] {highestcat}: SGD{highestdata}"
 
-        summaryfp = Path.cwd()/'summary_report.txt'
-        with summaryfp.open(mode='a', encoding='UTF-8', newline= '') as file:
+        
+        with summaryfp.open(mode='a', encoding='UTF-8', newline= '') as file: 
             file.writelines(f"\n{msg}")
 
         return(msg)
