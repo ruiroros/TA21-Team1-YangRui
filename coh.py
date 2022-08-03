@@ -25,7 +25,6 @@ def coh():
                 difference = float(cash_on_hand[x]) - float(cash_on_hand[x-1])
                 x += 1
                 if difference <= 0:
-                #WRONG!!! NEED CONVERT DIFFERENCE FROM USD TO SGD BUT HOW 
                     message = f"[CASH DEFICIT] DAY: {days[x-1]}, AMOUNT: SGD{abs(difference)} "
 
                 else:
@@ -36,14 +35,11 @@ def coh():
                 message = f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY "
                 return message
 
-            # ValueError , TypeError, 
         except ValueError:
             print("Please enter an appropriate value according to the argument type.")
         
         except TypeError:
             print("Please apply an appropriate operation or function according to the object type.")
 
-        # need finally?
-        # ValueError, TypeError, anymore??
 
 print(coh())
