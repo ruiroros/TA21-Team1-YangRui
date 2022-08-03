@@ -3,7 +3,7 @@ import csv
 
 coh_fp = Path.cwd()/"csv_reports"/"cash-on-hand-usd.csv" 
 
-def coh():
+def coh_function():
     cash_on_hand = []
     days = []
 
@@ -42,4 +42,4 @@ def coh():
             print("Please apply an appropriate operation or function according to the object type.")
 
 
-print(coh())
+print(coh_function())
