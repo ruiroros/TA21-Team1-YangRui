@@ -54,7 +54,7 @@ import csv
 import api, coh, overheads, profit_loss
 
 def main():
-    fp = Path.cwd()/"summary_report_vanda.txt"
+    fp = Path.cwd()/"vanda_summary"
     fp.touch()
     print(fp.exists())
 
