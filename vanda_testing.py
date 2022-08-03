@@ -63,5 +63,5 @@ def main():
     two = coh.coh_function(forex)
     three = profit_loss.profitloss_function(forex)
 
-    with fp.open(mode='w', encoding='UTF-8', newline='') as file:
-        file.writelines(forex)
+    # with fp.open(mode='w', encoding='UTF-8', newline='') as file:
+    #     file.writelines(forex)
