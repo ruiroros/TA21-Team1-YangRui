@@ -27,7 +27,7 @@ def overhead_function():
         with summaryfp.open(mode='a', encoding='UTF-8', newline= '') as file: 
             file.writelines(f"\n{msg}")
 
-        returnmsg
+        return msg
 
 
 print(overhead_function())
