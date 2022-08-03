@@ -50,4 +50,18 @@ import csv
         
 
 # print(coh())
-print(Path.cwd())
+# print(Path.cwd())
+import api, coh, overheads, profit_loss
+
+def main():
+    fp = Path.cwd()/"summary_report_vanda.txt"
+    fp.touch()
+    print(fp.exists())
+
+    forex = api.api_function(forex)
+    one = overheads.overhead_function(forex)
+    two = coh.coh_function(forex)
+    three = profit_loss.profitloss_function(forex)
+
+    with fp.open(mode='w', encoding='UTF-8', newline='') as file:
+        file.writelines(forex)
