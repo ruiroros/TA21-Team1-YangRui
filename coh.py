@@ -44,8 +44,6 @@ def coh():
             print("Please apply an appropriate operation or function according to the object type.")
 
         # need finally?
-        finally:
-            print("End of function.")
         # ValueError, TypeError, anymore??
 
 print(coh())
