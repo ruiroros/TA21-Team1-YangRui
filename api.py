@@ -6,10 +6,9 @@ response = requests.get(url)
 data = response.json()
 
 def api_function():
-    rate = float(data['Realtime Currency Exchange Rate']['5. Exchange Rate'])
-    forex = rate
+    forex = float(data['Realtime Currency Exchange Rate']['5. Exchange Rate'])
 
-    exchange_rate = f'[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{rate}'
+    exchange_rate = f'[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}'
     return exchange_rate
 
 print(api_function())
