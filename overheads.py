@@ -1,5 +1,5 @@
 from pathlib import Path
-import csv
+import csv, api
 
 data = []
 overheads = {}
@@ -18,12 +18,14 @@ def overhead_function():
 
             x = line[0]
             overheads[value] = x
+
             
+        y = forex
         highestdata = max(data)
         highestcat = overheads[highestdata]
-        msg = f"[HIGHEST OVERHEADS] {highestcat}: SGD{highestdata}"
+        msg = f"[HIGHEST OVERHEADS] {highestcat}: SGD{highestdata*y}"
 
-        
+
         # with summaryfp.open(mode='a', encoding='UTF-8', newline= '') as file: 
         #     file.writelines(f"\n{msg}")
 
