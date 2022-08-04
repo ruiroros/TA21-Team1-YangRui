@@ -34,7 +34,7 @@ def coh_function():
             if difference > 0:
                 message = f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY "
                 return message
-
+                
         except ValueError:
             print("Please enter an appropriate value according to the argument type.")
         
