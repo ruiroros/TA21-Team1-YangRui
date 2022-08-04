@@ -11,20 +11,11 @@ def main_function():
     thr = profit_loss.profitloss_function()
 
 
-    # with fp.open(mode='w', encoding='UTF-8', newline= '') as file:
-    #     file.writelines(api.api_function())
     with fp.open(mode='w', encoding='UTF-8', newline= '') as file:
-        file.writelines(f"\n {one}")
+        file.writelines(forex)
     with fp.open(mode='a', encoding='UTF-8', newline= '') as file:
-        file.writelines(f"\n {two}")
-    with fp.open(mode='a', encoding='UTF-8', newline= '') as file:
-        file.writelines(f"\n {thr}")
+        file.writelines(f"{one}")
+        file.writelines(f"{two}")
+        file.writelines(f"{thr}")
 main_function()
 
-# a = main_function()
-# fp = Path.cwd()/'summary_report.txt'
-# fp.touch()
-
-# with fp.open(mode='w', encoding='UTF-8', newline= '') as file:
-#     file.writelines(a)
-    
