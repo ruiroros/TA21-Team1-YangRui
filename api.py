@@ -11,10 +11,10 @@ def api_function():
     forex = float(data['Realtime Currency Exchange Rate']['5. Exchange Rate'])
 
     exchange_rate = f'[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}'
-    print(exchange_rate)
+    return exchange_rate
 
     # with summaryfp.open(mode='w', encoding='UTF-8', newline= '') as file: 
     #     file.writelines(exchange_rate)
 
 
-api_function()
+print(api_function())
