@@ -10,17 +10,15 @@ def main_function():
     two = coh.coh_function()
     thr = profit_loss.profitloss_function()
 
-    print(forex)
-
 
     # with fp.open(mode='w', encoding='UTF-8', newline= '') as file:
     #     file.writelines(api.api_function())
-    # with fp.open(mode='a', encoding='UTF-8', newline= '') as file:
-    #     file.writelines(f"\n {one}")
-    # with fp.open(mode='a', encoding='UTF-8', newline= '') as file:
-    #     file.writelines(f"\n {two}")
-    # with fp.open(mode='a', encoding='UTF-8', newline= '') as file:
-    #     file.writelines(f"\n {thr}")
+    with fp.open(mode='w', encoding='UTF-8', newline= '') as file:
+        file.writelines(f"\n {one}")
+    with fp.open(mode='a', encoding='UTF-8', newline= '') as file:
+        file.writelines(f"\n {two}")
+    with fp.open(mode='a', encoding='UTF-8', newline= '') as file:
+        file.writelines(f"\n {thr}")
 main_function()
 
 # a = main_function()
