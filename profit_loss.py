@@ -38,7 +38,9 @@ def profitloss_function():
         try:
             # while the counter is less than the number of items in the list appended
             while x < len(profit_loss):
+                # API key is retrieved from AlphaVantage
                 api_key = "0PXEE709XYMK7M42"
+                # url for the real time 
                 url = f"https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=SGD&apikey={api_key}"
                 response = requests.get(url)
                 info = response.json()
