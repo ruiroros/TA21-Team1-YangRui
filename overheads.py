@@ -2,16 +2,24 @@ from pathlib import Path
 import csv
 import requests, json
 
+# empty list is created for the values of the overhead 
 data = []
+# empty list is created for the categories of the overheads
 overheads = {}
 
+# an API key is retrieved from AlphaVantage
 api_key = "0PXEE709XYMK7M42"
+# the url for the real time currency exchange rate is retrieved 
 url = f"https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=SGD&apikey={api_key}"
+# *(brightspace 7.2.3)
 response = requests.get(url)
+# 
 info = response.json()
 
-
 def overhead_function():
+    """
+    """
+    #
     overheads_fp = Path.cwd()/"csv_reports"/"overheads-day-45.csv"
 
     with overheads_fp.open(mode='r', encoding='UTF-8', newline="") as file:
