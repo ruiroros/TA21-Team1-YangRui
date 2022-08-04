@@ -10,7 +10,7 @@ days = []
 
 def profitloss_function():
     """
-    # the function is to access the data, and find the difference between the net profit between each days
+    the function is to access the data, and find the difference between the net profit between each days
     """
 
     # setting the csv file to access the data in read mode
