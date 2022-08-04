@@ -76,7 +76,12 @@ def profitloss_function():
                 # if the condition is met the message in the f string will be displayed
                 msg = "[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
                 # return keyword returns the display message
+                
+                # with fp.open(mode='a', encoding='UTF-8', newline= '') as file:
+                #     file.writelines(msg)
+
                 return(msg)
+
             with fp.open(mode='a', encoding='UTF-8', newline= '') as file:
                 file.writelines(msg)
 
