@@ -3,8 +3,9 @@ import csv, requests
 
 # file path to the profit and loss csv file 
 profitloss_fp = Path.cwd()/"csv_reports"/"profit-and-loss-usd.csv"
-# empty list created for the values of profit and loss and days
+# empty list created for the values of net profit 
 profit_loss = []
+# empty list created for the day numbers 
 days = []
 
 def profitloss_function():
@@ -26,9 +27,9 @@ def profitloss_function():
             # the net profit values are appended to the empty list created earlier
             profit_loss.append(netprofit)
 
-            # the number of days are being assigned to a variable
+            # the day numbers are being assigned to a variable
             day = line[0]
-            # the number of days are appended to the list for days created earlier
+            # the day numbers are appended to the list for days created earlier
             days.append(day)
 
         # x acts as a counter 
@@ -40,30 +41,50 @@ def profitloss_function():
             while x < len(profit_loss):
                 # API key is retrieved from AlphaVantage
                 api_key = "0PXEE709XYMK7M42"
-                # url for the real time 
+                # url for the real time currency exchange rate is retrieved 
                 url = f"https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=SGD&apikey={api_key}"
+                # the requests library and get method is used to call the API
                 response = requests.get(url)
+                # retrieve data with .json from response and save it as data and assigned to a new variable
                 info = response.json()
+                # the data is converted into a float and assigned to a new variable
                 forex = float(info['Realtime Currency Exchange Rate']['5. Exchange Rate'])
 
+
+                # the difference between net profits are calculated using the counter 
                 difference = float(profit_loss[x]) - float(profit_loss[x-1])
+                # 1 is added to the counter and looped
                 x += 1 
+                # if statement with comparion operator
                 if difference <= 0:
+                    # if the condition is met, the message will be displayed 
                     msg = f"[PROFIT DEFICIT] DAY: {days[x-1]}, AMOUNT: SGD{abs(difference*forex)}"
 
+                # the second statement is executed
                 else: 
+                    # the program continues to calculate the difference in net profits until conditions of the if statement are not met 
                     continue
+
+                # return keyword returns the display message
                 return msg
 
+
+            # if statement with comparion operator
             if difference > 0:
+                # if the condition is met the message in the f string will be displayed
                 msg = "[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
+                # return keyword returns the display message
                 return msg
 
+        # except statement will execute with ValueError when try statement fails
         except ValueError:
+            # the code will print the message when the try statement fails 
             print("Please enter an appropriate value according to the argument type.")
 
+        # except statement will execute with TypeError when try statement fails
         except TypeError:
+            # the code will print the message when the try statement fails 
             print("Please apply an appropriate operation or function according to the object type.")
 
-
+# prints the function 
 print(profitloss_function())
