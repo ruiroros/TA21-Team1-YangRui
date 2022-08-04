@@ -37,7 +37,7 @@ def overhead_function():
             # the overhead values are appended to the empty list created earlier
             data.append(value)
 
-            # the 
+            # ???
             x = line[0]
             overheads[value] = x
 
