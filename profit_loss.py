@@ -86,5 +86,5 @@ def profitloss_function():
             # the code will print the message when the try statement fails 
             print("Please apply an appropriate operation or function according to the object type.")
 
-# prints the function 
+# executes the function 
 print(profitloss_function())
