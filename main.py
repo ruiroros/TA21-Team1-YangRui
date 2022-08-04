@@ -1,4 +1,4 @@
-import api, coh, overheads, profit_loss
+import api, cash_on_hand, overheads, profit_loss
 from pathlib import Path
 
 def main_function():
@@ -12,7 +12,7 @@ def main_function():
 
     api.api_function()
     one = overheads.overhead_function()
-    two = coh.coh_function()
+    two = cash_on_hand.coh_function()
     thr = profit_loss.profitloss_function()
 
 

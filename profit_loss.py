@@ -23,17 +23,18 @@ def profitloss_function():
         # the headers are skipped and only the values are being read
         next(profitloss_read)
 
+        with fp.open(mode='a', encoding='UTF-8', newline= '') as file:
         # a for loop is created 
-        for line in profitloss_read:
+            for line in profitloss_read:
             # the net profit values are being assigned to a variable
-            netprofit = line[4]
-            # the net profit values are appended to the empty list created earlier
-            profit_loss.append(netprofit)
+                netprofit = line[4]
+                # the net profit values are appended to the empty list created earlier
+                profit_loss.append(netprofit)
 
-            # the day numbers are being assigned to a variable
-            day = line[0]
-            # the day numbers are appended to the list for days created earlier
-            days.append(day)
+                # the day numbers are being assigned to a variable
+                day = line[0]
+                # the day numbers are appended to the list for days created earlier
+                days.append(day)
 
         # x acts as a counter 
         x = 1
@@ -74,16 +75,16 @@ def profitloss_function():
             # if statement with comparion operator
             if difference > 0:
                 # if the condition is met the message in the f string will be displayed
-                msg = "[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
+                msg = "[NET PROFIT Swith fp.open(mode='a', encoding='UTF-8', newline= '') as file:URPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
                 # return keyword returns the display message
                 
-                # with fp.open(mode='a', encoding='UTF-8', newline= '') as file:
-                #     file.writelines(msg)
+                
+                file.writelines(msg)
 
                 return(msg)
 
             with fp.open(mode='a', encoding='UTF-8', newline= '') as file:
-                file.writelines(msg)
+                file.write(msg)
 
         # except statement will execute with ValueError when try statement fails
         except ValueError:

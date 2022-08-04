@@ -8,6 +8,10 @@ def coh_function():
     """
     # the function is used to calculate the difference between the amount of cash between each day
     """
+
+    fp = Path.cwd()/'summary_report.txt'
+    fp.touch()
+    
     # empty list is created for the cash values
     cash_on_hand = []
     # empty list is created for the day numbers
