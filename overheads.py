@@ -37,8 +37,9 @@ def overhead_function():
             # the overhead values are appended to the empty list created earlier
             data.append(value)
 
-            # ???
+            # line[0] extracts the data from the first column in overheads.reader
             x = line[0]
+            # overheads values
             overheads[value] = x
 
         # API key is retrieved from AlphaVantage
