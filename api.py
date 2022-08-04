@@ -26,6 +26,7 @@ def api_function():
     # the message is printed
     print(exchange_rate)
 
+    # writing to the summary report 
     with fp.open(mode='w', encoding='UTF-8', newline= '') as file:
         file.writelines(exchange_rate)
 

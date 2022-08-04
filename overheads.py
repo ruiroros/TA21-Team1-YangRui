@@ -20,6 +20,10 @@ def overhead_function():
     """
     the function is used to determine the highest overhead and the category is belongs to 
     """
+
+    fp = Path.cwd()/'summary_report.txt'
+    fp.touch()
+
     # a file path to the overheads csv file is created
     overheads_fp = Path.cwd()/"csv_reports"/"overheads-day-45.csv"
 
@@ -61,6 +65,9 @@ def overhead_function():
         msg = f"[HIGHEST OVERHEADS] {highestcat}: SGD{highestdata*forex}"
         # the message is printed
         print(msg)
+
+        with fp.open(mode='a', encoding='UTF-8', newline= '') as file:
+            file.write(f"\n {msg}")
 
 # executes the function 
 overhead_function()
