@@ -13,6 +13,9 @@ def profitloss_function():
     the function is to access the data, and find the difference between the net profit between each days
     """
 
+    fp = Path.cwd()/'summary_report.txt'
+    fp.touch()
+
     # setting the csv file to access the data in read mode
     with profitloss_fp.open(mode='r', encoding='UTF-8', newline="") as file:
         # the csv file is being read 
@@ -65,7 +68,7 @@ def profitloss_function():
                     # the program continues to calculate the difference in net profits until conditions of the if statement are not met 
                     continue
                 # return keyword returns the display message
-                return msg
+                return(msg)
 
 
             # if statement with comparion operator
@@ -73,7 +76,9 @@ def profitloss_function():
                 # if the condition is met the message in the f string will be displayed
                 msg = "[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
                 # return keyword returns the display message
-                return msg
+                return(msg)
+            with fp.open(mode='a', encoding='UTF-8', newline= '') as file:
+                file.writelines(msg)
 
         # except statement will execute with ValueError when try statement fails
         except ValueError:
@@ -84,6 +89,7 @@ def profitloss_function():
         except TypeError:
             # the code will print the message when the try statement fails 
             print("Please apply an appropriate operation or function according to the object type.")
+
 
 # executes the function 
 print(profitloss_function())
