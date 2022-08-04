@@ -60,11 +60,10 @@ def profitloss_function():
                     # if the condition is met, the message will be displayed 
                     msg = f"[PROFIT DEFICIT] DAY: {days[x-1]}, AMOUNT: SGD{abs(difference*forex)}"
 
-                # the second statement is executed
+                # the second statement is executed if the conditions in the if statement are not met
                 else: 
                     # the program continues to calculate the difference in net profits until conditions of the if statement are not met 
                     continue
-
                 # return keyword returns the display message
                 return msg
 
