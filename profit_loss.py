@@ -78,11 +78,11 @@ def profitloss_function():
                     msg = "[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
                     # return keyword returns the display message
                 
-
+                #code dosent append we are sorry we tried until the last minute, but our main.py able to execute
                     return(msg)
 
                 with fp.open(mode='a', encoding='UTF-8', newline= '') as file:
-                    file.write(msg)
+                    file.write(f"\n{msg}")
 
             # except statement will execute with ValueError when try statement fails
             except ValueError:
