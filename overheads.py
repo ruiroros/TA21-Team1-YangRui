@@ -4,7 +4,7 @@ import requests, json
 
 # empty list is created for the values of the overhead 
 data = []
-# empty list is created for the categories of the overheads
+# empty dictionary  is created for the categories of the overheads
 overheads = {}
 
 # an API key is retrieved from AlphaVantage
@@ -18,7 +18,7 @@ info = response.json()
 
 def overhead_function():
     """
-    # the function is used to determine the highest overhead and the category is belongs to 
+    the function is used to determine the highest overhead and the category is belongs to 
     """
     # a file path to the overheads csv file is created
     overheads_fp = Path.cwd()/"csv_reports"/"overheads-day-45.csv"
