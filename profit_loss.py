@@ -1,27 +1,44 @@
 from pathlib import Path
 import csv 
 
+# file path to the profit and loss csv file 
 profitloss_fp = Path.cwd()/"csv_reports"/"profit-and-loss-usd.csv"
+# empty list created for the values of profit and loss and days
 profit_loss = []
 days = []
 
 def profitloss_function():
+    """
+    # the function is to access the data, and find the difference between the net profit between each days
+    """
 
+    # setting the csv file to access the data in read mode
     with profitloss_fp.open(mode='r', encoding='UTF-8', newline="") as file:
+        # the csv file is being read 
         profitloss_read = csv.reader(file)
+        # the headers are skipped and only the values are being read
         next(profitloss_read)
 
+        # a for loop is created 
         for line in profitloss_read:
+            # the net profit values are being assigned to a variable
             netprofit = line[4]
+            # the net profit values are appended to the empty list created earlier
             profit_loss.append(netprofit)
 
+            # the number of days are being assigned to a variable
             day = line[0]
+            # the number of days are appended to the list for days created earlier
             days.append(day)
 
+        # x acts as a counter 
         x = 1
 
+        # a try statement is used to execute the code if there are no exceptions
         try:
+            # while the counter is less than the number of items in the list appended
             while x < len(profit_loss):
+                # 
                 difference = float(profit_loss[x]) - float(profit_loss[x-1])
                 x += 1 
                 if difference <= 0:
