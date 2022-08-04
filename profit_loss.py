@@ -1,5 +1,5 @@
 from pathlib import Path
-import csv 
+import csv, requests
 
 # file path to the profit and loss csv file 
 profitloss_fp = Path.cwd()/"csv_reports"/"profit-and-loss-usd.csv"
@@ -38,11 +38,16 @@ def profitloss_function():
         try:
             # while the counter is less than the number of items in the list appended
             while x < len(profit_loss):
-                # 
+                api_key = "0PXEE709XYMK7M42"
+                url = f"https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=SGD&apikey={api_key}"
+                response = requests.get(url)
+                info = response.json()
+                forex = float(info['Realtime Currency Exchange Rate']['5. Exchange Rate'])
+
                 difference = float(profit_loss[x]) - float(profit_loss[x-1])
                 x += 1 
                 if difference <= 0:
-                    msg = f"[PROFIT DEFICIT] DAY: {days[x-1]}, AMOUNT: SGD{abs(difference)}"
+                    msg = f"[PROFIT DEFICIT] DAY: {days[x-1]}, AMOUNT: SGD{abs(difference*forex)}"
 
                 else: 
                     continue
